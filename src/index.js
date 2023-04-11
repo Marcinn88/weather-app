@@ -5,7 +5,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import axios from 'axios';
 
 const apiKey = "?key=62d7f1dc6fcb4c748e2115014231104";
-const apiUrl = "http://api.weatherapi.com/v1/current.json";
+const apiUrl = "https://api.weatherapi.com/v1/current.json";
 const siteInput = document.querySelector('.search-form__input')
 const siteBtn = document.querySelector('.search_button')
 
