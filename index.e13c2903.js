@@ -1,2 +1,0 @@
-const e=document.querySelector(".search_button"),c=document.querySelector(".search-form__input");async function t(e){const c=await fetch("http://api.weatherapi.com/v1/current.json?key=62d7f1dc6fcb4c748e2115014231104&q="+e+"&aqi=yes"),t=await c.json();console.log(t);document.querySelector(".ico").src=t.current.condition.icon,document.querySelector(".city").innerHTML=t.location.name,document.querySelector(".temperature").innerHTML=Math.round(t.current.temp_c)}e.addEventListener("click",(()=>{t(c.value)})),t();
-//# sourceMappingURL=index.e13c2903.js.map
