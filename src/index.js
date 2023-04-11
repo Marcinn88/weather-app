@@ -5,7 +5,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import axios from 'axios';
 
 const apiKey = "?key=62d7f1dc6fcb4c748e2115014231104";
-const apiUrl = "https://api.weatherapi.com/v1/current.json";
+const apiUrl = "https://api.weatherapi.com/v1/forecast.json";
 const siteInput = document.querySelector('.search-form__input')
 const siteBtn = document.querySelector('.search_button')
 
@@ -30,6 +30,6 @@ siteBtn.addEventListener("click",  (e) => {
   const siteIco = document.querySelector('.ico').src = ''
   const siteCity = document.querySelector('.city').innerHTML = ''
   const siteTemp = document.querySelector('.temperature').innerHTML = ''
-  } else checkWeather(siteInput.value);
+  } else checkWeather(siteInput.value.toLowerCase());
     })  
 
