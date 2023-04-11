@@ -10,22 +10,24 @@ const apiUrl = "http://api.weatherapi.com/v1/current.json";
 
 
 const siteBtn = document.querySelector('.search_button')
-const siteInput = "Sydney"
+const siteInput = document.querySelector('.search-form__input')
 
 
-// siteBtn.addEventListener('click', checkWeather(siteInput))
 
-async function checkWeather(){
-  const response = await fetch(apiUrl+`${apiKey}`+`&q=${siteInput}&aqi=yes`);
+async function checkWeather(city){
+
+  const response = await fetch(apiUrl+`${apiKey}`+'&q='+ city +'&aqi=yes');
   const data = await response.json();
   console.log(data);
   const siteIco = document.querySelector('.ico').src = data.current.condition.icon;
   const siteCity = document.querySelector('.city').innerHTML = data.location.name;
-  const siteTemp = document.querySelector('.temperature').innerHTML = Math.round(data.current.temp_c)+" C";
+  const siteTemp = document.querySelector('.temperature').innerHTML = Math.round(data.current.temp_c);
 }
 
 siteBtn.addEventListener('click',  () => {
-  checkWeather()
+  
+  checkWeather(siteInput.value)
+  
   })  
   
   checkWeather()
