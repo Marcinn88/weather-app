@@ -1,0 +1,2 @@
+const e=document.querySelector(".search_button");async function c(){const e=await fetch("http://api.weatherapi.com/v1/current.json?key=62d7f1dc6fcb4c748e2115014231104&q=Sydney&aqi=yes"),c=await e.json();console.log(c);document.querySelector(".ico").src=c.current.condition.icon,document.querySelector(".city").innerHTML=c.location.name,document.querySelector(".temperature").innerHTML=Math.round(c.current.temp_c)+" C"}e.addEventListener("click",(()=>{c()})),c();
+//# sourceMappingURL=index.1c99d19c.js.map
