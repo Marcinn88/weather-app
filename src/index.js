@@ -11,9 +11,9 @@ const siteBtn = document.querySelector('.search_button')
 
 async function checkWeather(city){
 try {
-  const response = await fetch(apiUrl+`${apiKey}`+'&q='+ city +'&aqi=yes');
+  const response = await fetch(apiUrl+`${apiKey}`+'&q='+ city +'&aqi=yes&days=14');
   const data = await response.json();
-  // console.log(data);
+  console.log(data);
   const siteIco = document.querySelector('.ico').src = data.current.condition.icon;
   const siteCity = document.querySelector('.city').innerHTML = data.location.name;
   const siteTemp = document.querySelector('.temperature').innerHTML = Math.round(data.current.temp_c);
